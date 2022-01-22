@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Validation Demos</title>
+		<script>
+		function validate()
+		{
+			var resp;
+			var status="";
+			var n=document.getElementById("num").value;
+			if(isNaN(n)||n<1||n>5)
+			{
+				status="invalid input";	
+				resp=false;
+			}
+			else
+			{
+				status="Valid input";
+				resp=true;
+			}
+			document.getElementById("message").innerHTML=status;
+			return resp;
+		}
+		</script>
+	</head>
+	<body>
+		<form action="#" onsubmit="return validate()">
+			Enter a number : <input type="text" id="num"><br>
+			<input type="submit">
+		</form>
+		<span id="message"></span>
+	</body>
+</html>	

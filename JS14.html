@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<script>
+			<!--show hide effect-->
+			var flag=true;
+			function showHide()
+			{
+				var data="<p>Hey!! I am dynamically created</p>";
+				if(flag)
+				{
+					document.getElementById("myDiv").innerHTML=data;
+					document.getElementById("myBtn").innerHTML="HIDE";
+					flag=false;
+				}
+				else
+				{
+					document.getElementById("myDiv").innerHTML="";
+					document.getElementById("myBtn").innerHTML="SHOW";
+					flag=true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<button id="myBtn" onclick="showHide()">SHOW</button><br>
+	<div id="myDiv">
+	</div>
+	
+	</body>
+</html>	

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<script>
+			function validate()
+			{
+				var name=document.getElementById("iname").value;
+				var pass=document.getElementById("ipass").value;
+				var status=false;
+				if((name==null)||(name==""))
+				{
+				document.getElementById("nameissue").innerHTML="Name is blank..Please provide a value";
+					status=false;
+				}
+				else
+				{
+					document.getElementById("nameissue").innerHTML="";
+					status=true;
+				}
+				if(pass.length<8)
+				{
+				document.getElementById("passissue").innerHTML="Password is less than 8 characters..Please provide a valid value";
+					status=false;
+				}
+				else 
+				{
+				document.getElementById("passissue").innerHTML="";
+				
+					status=true;
+				}
+				return status;
+			}
+		</script>
+	</head>
+	<body>
+		<form method="post" action="profile.jsp" onsubmit="return validate()">
+		Name : <input type="text" name="uname" id="iname"> <span id="nameissue" style="color:red;"></span><br>
+		
+		Password : <input type="password" name="upass" id="ipass" title="Enter atleast 8 characters"> <span id="passissue" style="color:red;"></span><br>
+		<input type="submit" value="Login">
+		</form>
+	</body>
+</html>	

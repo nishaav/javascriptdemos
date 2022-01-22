@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<!--How to handle json response-->
+		
+		
+	</head>
+	<body>
+		<div id="myDiv"></div>
+		<script>
+		var data='{"name":"Mukesh","age":23,"id":1}';//json object
+		//json object---->javascript object
+		//parse() : pass the json object and will convert it into javascript object
+		var jsObj=JSON.parse(data);
+		//jsObj-->javascript object
+		document.getElementById("myDiv").innerHTML=jsObj.name+","+jsObj.age+","+jsObj.id;
+ 		</script>
+	
+	</body>
+</html>	

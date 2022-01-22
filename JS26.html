@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Validation Demos</title>
+		<script>
+		function checkemail()
+		{
+			var estatus="";
+			//@ .
+			//atleast one character before @ and after @. also
+			//atleast one character after . 
+			var e=document.getElementById("uemail").value;
+			var at=e.indexOf("@");
+			var dot=e.lastIndexOf(".");
+			if((at<1)||(dot<at+2)||(dot+2>=e.length))
+			{
+				estatus="please enter a valid email";
+				
+			}
+			else
+			{
+				estatus="Valid email";
+			}
+			document.getElementById("emessage").innerHTML=estatus;
+			
+		}
+		function validate()
+		{
+			var resp;
+			var status="";
+			var n=document.getElementById("uage").value;
+			if(n<1||n>18)
+			{
+				status="invalid input";	
+				resp=false;
+			}
+			else
+			{
+				status="Valid input";
+				resp=true;
+			}
+			document.getElementById("message").innerHTML=status;
+			return resp;
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Registration Form</h1>
+		<form onsubmit="return validate()">
+			Name : <input type="text" id="uname" required><br>
+			Email : <input type="email" id="uemail" required onchange="checkemail()"><span id="emessage" style="color:red"></span><br><br>
+			Age : <input type="number" id="uage" required> <span id="message" style="color:red"></span><br>
+			<input type="submit">
+		</form>
+	</body>
+</html>	

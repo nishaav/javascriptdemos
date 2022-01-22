@@ -1,0 +1,77 @@
+<!--BOM : Browser Object Model-->
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<script>
+		/*window: object of browser through which one can fetch the information
+		regarding the client browser.*/
+		alert('information');
+		window.alert('Succeed');
+		/*
+		alert():
+		confirm():
+		prompt():
+		open(): open a new window.
+		close(): close the current window.
+		setTimeOut() : perform the specified action after the specified time interval.
+		such as calling a js function,connecting with server automatically.
+		
+		*/
+		function call()
+		{
+			open("https://www.edubridgeindia.com");
+		}
+		function callAfter()
+		{
+			//setTimeOut(functiontobecalled,duration);
+			//setTimeout(call(),2000);
+			setTimeout(
+			function(){
+				alert('Called me after 2000 ms');
+			},1000);
+		}
+		
+		function historyObject()
+		{
+			history.forward();
+			history.back();
+			history.go(3);
+			history.go(-3);
+			alert(history.length);
+		}
+		function navigatorObject()
+		{
+			document.writeln("<br>Language : "+navigator.language);
+			document.writeln("<br>User Agent : "+navigator.userAgent);
+			document.writeln("<br>Cookie Enabled : "+navigator.cookieEnabled);
+			document.writeln("<br>App Name : "+navigator.appName);
+			document.writeln("<br>App Version : "+navigator.appVersion);
+			document.writeln("<br>Platform : "+navigator.platform);
+			document.writeln("<br>Is Java Enabled : "+navigator.javaEnabled());
+			
+		}
+		function screenObject()
+		{
+			document.writeln("<br>Width : "+screen.width);
+			document.writeln("<br>Height : "+screen.height);
+			document.writeln("<br>Available width : "+screen.availWidth);
+			document.writeln("<br>Available Height : "+screen.availHeight);
+			document.writeln("<br>Color Depth : "+screen.colorDepth);
+			document.writeln("<br>Pixel Depth : "+screen.pixelDepth);
+		}
+		
+		</script>
+	</head>
+	<body>
+		<input type='button' value='CLICK' onclick='call()'>
+		<br>
+		<input type='button' value='CALL AFTER' onclick='callAfter()'>
+		<br>
+		<input type='button' value='CLOSE' onclick='window.close();'>
+		<br>
+		<input type='button' value='Navigator' onclick='navigatorObject()'>
+		<br>
+		<input type='button' value='SCREEN' onclick='screenObject()'>
+	</body>
+</html>	

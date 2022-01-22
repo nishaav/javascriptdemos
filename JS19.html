@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<!--How to handle json response-->
+		<style>
+		table
+		{
+			padding:10px;
+			margin:10px;
+			border:2px solid black;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<div id="myDiv"></div>
+		<script>
+		var data='{"users":[{"name":"Mukesh","age":23,"id":1},{"name":"Abarna","age":22,"id":2},{"name":"Waheda","age":22,"id":3}]}';//json object
+		//json object---->javascript object
+		//parse() : pass the json object and will convert it into javascript object
+		var jsObj=JSON.parse(data);
+		//jsObj-->javascript object
+		
+		var response="<table>";
+		for(var i=0;i<jsObj.users.length;i++)
+		{
+			
+			response+="<tr><td>"+jsObj.users[i].id+"</td><td>"+jsObj.users[i].name+"</td><td>"+jsObj.users[i].age+"</td></tr>";
+			
+		}
+		response+="</table>";
+		document.getElementById("myDiv").innerHTML=response;
+ 		</script>
+	
+	</body>
+</html>	

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demo</title>
+		<style>
+		body
+		{
+			background-color:red;
+		}
+		div
+		{
+			background-color:white;
+			margin:10px;
+		}
+		ul
+		{
+			margin:10px;
+			padding:30px;
+		}
+		li
+		{
+			color:black;
+			margin:10px;
+			padding:20px;
+			display:inline;
+			
+		}
+		</style>
+		<script>
+		function colorchange(inputId)
+		{
+			//var inputId=document.getElementById("home");
+			if(inputId=="home")
+			{
+				document.body.style.backgroundColor="green";
+			}
+			else if(inputId=="about")
+			{
+				document.body.style.backgroundColor="yellow";
+			}
+			else if(inputId=="project")
+			{
+				document.body.style.backgroundColor="pink";
+			}
+			else if(inputId=="contact")
+			{
+				document.body.style.backgroundColor="black";
+			}
+			else
+			{
+				document.body.style.backgroundColor="white";
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div width="100%" height="400">
+			<ul>
+				<li id="home" onclick="colorchange(this.id)"><a href="#">Home</a></li>
+				<li id="about" onclick="colorchange(this.id)"><a href="#">About Us</a></li>
+				<li id="project" onclick="colorchange(this.id)"><a href="#">Project</a></li>
+				<li id="contact" onclick="colorchange(this.id)"><a href="#">Contact Us</a></li>
+				<li id="enquiry" onclick="colorchange(this.id)"><a href="#">Enquiry</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
+
+
+This Republic Day Join us to celebrate SkillsFactor and unveil the freedom of knowledge, starts @ 8am, India's Largest Online Event with 26 sessions of 26 mins each.
+
+Register now@ https://bit.ly/3FhqKn6

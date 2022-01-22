@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<script>
+			function call1()
+			{
+				alert('Mouse over the heading');
+			}
+			function call2()
+			{
+				alert('Textbox gaining the focus');
+			}
+			function call3()
+			{
+				alert('key is pressed');
+			}
+			function call4()
+			{
+				alert('document is loaded');
+			}
+		</script>
+	</head>
+	<body onload="call4()">
+		<h1 onmouseover="call1()">Calling mouseover</h1>
+		Textbox gains focus : <input type='text' onfocus="call2()"><br>
+		Textbox getting an input : <input type='text' onkeypress="call3()"><br>
+		
+		
+		
+	</body>
+</html>

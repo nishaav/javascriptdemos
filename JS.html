@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<!--How to handle json response-->
+		
+		
+	</head>
+	<body>
+		<div id="myDiv"></div>
+		<script>
+		  apiCall = fetch(
+			"https://jsonplaceholder.typicode.com/todos/1");
+  
+        var jsObj="";
+        apiCall.then(response =>
+            response.json()).then(data => {
+                console.log(data);
+				jsObj=data;
+				document.getElementById("myDiv").innerHTML=jsObj.userId+","+jsObj.title+","+jsObj.id;
+ 		
+            })
+		
+		</script>
+	
+	</body>
+</html>	

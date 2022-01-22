@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Demos</title>
+		<!--How to call get API-->
+		
+		
+	</head>
+	<body>
+		<div id="myDiv"></div>
+		<script>
+		headersinfo=new Headers();
+		headersinfo.append('Origin','http://localhost:8080');
+		apiCall=fetch("http://localhost:8080/users/1",{
+		mode: 'cors',
+		method:'GET',
+		cache: 'no-cache'
+		}
+        );
+		apiCall.then(response=>response.json()).then(data=>{
+		console.log(data);
+		document.getElementById("myDiv").innerHTML=data.userId+","+data.userName+","+data.userContact;
+ 		});
+		</script>
+	
+	</body>
+</html>	
