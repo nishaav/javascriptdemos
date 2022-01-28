@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascript Validation Demos</title>
+		
+	</head>
+	<body>
+		<form action="#">
+			Password : <input type="password" id="pd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+			title="Must contain atleast one digit,one lowercase and one uppercase character and length should be atleast 8 characters" required>
+		<input type="submit">	
+		</form><br>
+		<span id="lower"></span><br>
+		<span id="upper"></span><br>
+		<span id="digit"></span><br>
+		<span id="len"></span><br>
+		
+		<script>
+			var input=document.getElementById("pd");
+			//option 2 to add on event through javascript
+			input.onkeyup=function()
+			{
+				var lowerletter=/[a-z]/g;
+				
+				if(input.value.match(lowerletter))
+				{
+					document.getElementById("lower").innerHTML="Lowercase letter is added";
+					document.getElementById("lower").style.color="green";
+				}
+				else
+				{
+					document.getElementById("lower").innerHTML="Lowercase letter is not added";
+					document.getElementById("lower").style.color="red";
+				}
+				var upperletter=/[A-Z]/g;
+				
+				if(input.value.match(upperletter))
+				{
+					document.getElementById("upper").innerHTML="Uppercase letter is added";
+					document.getElementById("upper").style.color="green";
+				}
+				else
+				{
+					document.getElementById("upper").innerHTML="Uppercase letter is not added";
+					document.getElementById("upper").style.color="red";
+				}
+				var digits=/[0-9]/g;
+				
+				if(input.value.match(digits))
+				{
+					document.getElementById("digit").innerHTML="Digit is added";
+					document.getElementById("digit").style.color="green";
+				}
+				else
+				{
+					document.getElementById("digit").innerHTML="Digit is not added";
+					document.getElementById("digit").style.color="red";
+				}
+				
+				
+				if(input.value.length>=8)
+				{
+					document.getElementById("len").innerHTML="length is valid";
+					document.getElementById("len").style.color="green";
+				}
+				else
+				{
+					document.getElementById("len").innerHTML="invalid length";
+					document.getElementById("len").style.color="red";
+				}	
+				//alert(input.value);	
+			}
+		
+		
+		</script>
+		</body>
+</html>	
